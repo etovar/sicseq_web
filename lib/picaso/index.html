@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interfaz basica PICASO</title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css">
+</head>
+<body>
+<br/><br/><br/>
+<div class="container">
+    <h3 style="text-align: center">Interfaz básica PICASO</h3>
+    <hr/>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel" style="background-color: #EEE; padding: 20px;">
+                <div class="panel-heading">
+                    <h3>Funciones Generales</h3>
+                </div>
+                <div class="panel-body">
+                    <form class="form-horizontal" method="post" action="./procesar_picaso.php">
+                        <br/>
+                        <div class="form-group">
+                            <label>
+                                Acción / URL:<br/>
+                                <select name="url" class="form-control">
+                                    <option>amortizaciones/obtenerTodo</option>
+                                    <option>calendario/obtenerTodo</option>
+                                    <option>estimaciones/obtenerTodo</option>
+                                    <option>fondos/obtenerTodo</option>
+                                    <option>obrasPagos/obtenerTodo</option>
+                                    <option>chequeras/obtenerTodo</option>
+                                    <option>ResumenObras/obtenerTodo</option>
+                                    <option>unicoPicaso/obtenerTodo</option>
+                                </select>
+                            </label>
+                        </div>
+                        <br/>
+                        <div class="form-group">
+                            <label>
+                                <input class=" checkbox-inline" type="checkbox" name="archivo" value="true"/> Guardar en archivo
+                            </label>
+                            <br/>
+                        </div>
+                        <input type="submit" value="Generar" />
+                        <input type="hidden" name="accion" value="generales"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="panel" style="background-color: #EEE; padding: 20px;">
+                <div class="panel-heading">
+                    <h2>Funciones por Obra</h2>
+                </div>
+                <div class="panel-body">
+                    <form class="form-horizontal" method="post" action="./procesar_picaso.php">
+                        <br/>
+                        <div class="form-group">
+                            <label>
+                                Acción / URL:<br/>
+                                <select name="url" class="form-control">
+                                    <option>amortizaciones/obtenerPorNumeroObra</option>
+                                    <option>calendario/obtenerPorNumeroObra</option>
+                                    <option>croquis/obtenerCroquisPorNumeroObra</option>
+                                    <option>documentos/obtenerTodosPorNumeroObra</option>
+                                    <option>estimaciones/obtenerPorNumeroObra</option>
+                                    <option>obrasPagos/obtenerPorNumeroObra</option>
+                                    <option>licitacion/obtenerPorNumeroObra</option>
+                                </select>
+                            </label>
+                            <br/>
+                            <label>
+                                Número de Obra
+                                <input required class="form-control" type="text" name="num_obra" value="2019-00305"/>
+                            </label>
+                        </div>
+                        <br/>
+                        <div class="form-group">
+                            <label>
+                                <input class=" checkbox-inline" type="checkbox" name="archivo" value="true"/> Guardar en archivo
+                            </label>
+                            <br/>
+                        </div>
+                        <input type="submit" value="Generar" />
+                        <input type="hidden" name="accion" value="porobra"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
